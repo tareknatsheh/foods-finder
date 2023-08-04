@@ -21,7 +21,7 @@ const Restaurants = () => {
                             <Col key={item._id}>
                                 <Link to={item._id} style={{textDecoration: "none"}}>
                                     <Card>
-                                        <Card.Img variant="top" src="./generic-restaurant-pic.jpg" />
+                                        <Card.Img variant="top" src="../generic-restaurant-pic.jpg" />
                                         <Card.Body>
                                             <Card.Title>{item.name}</Card.Title>
                                             <Card.Text>

@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 const Home = () => {
     return (
         <Container className="mt-4">
-            <h4>This is a demo web app - it's a fake restaurants review platform</h4>
+            <h4>This is a demo Full-Stack (MERN) web app - it's a fake restaurants review website</h4>
             <p>I've used the following:</p>
             <ul>
                 <li>React-Bootstrap for styling</li>

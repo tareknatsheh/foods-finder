@@ -1,4 +1,5 @@
-import { useLoaderData, json } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import { Link, json, useRouteLoaderData } from "react-router-dom";
 
 interface IRestaurant {
     name: string,
@@ -9,29 +10,32 @@ interface IRestaurant {
 }
 
 const RestaurantProfile = () => {
-    const restProfile = useLoaderData() as IRestaurant;
-
+    const restProfile = useRouteLoaderData("restaurant-details") as IRestaurant;
+    
     return (
-        <>
-        <p><strong>{restProfile.name}</strong></p>
-        <p>{restProfile.description}</p>
-        <p>Address: {restProfile.address}</p>
-        </>
+        <Container>
+            <div>
+                <p><strong>{restProfile.name}</strong></p>
+                <p>{restProfile.description}</p>
+                <p>{restProfile.address}</p>
+            </div>
+            <Link to="edit" className="btn btn-outline-dark">
+                Edit
+            </Link>
+        </Container>
     );
 }
 
 export default RestaurantProfile;
 
-export async function loader({request, params}: { request: any, params: any })
-{
+export async function loader({ request, params }: { request: any, params: any }) {
     const resp = await fetch("/api/restaurants/" + params.id);
-    if(!resp.ok)
-    {
-        throw json({ message: "Could not find the selected restaurant profile."},
-        {status: 500});
+    
+    if (!resp.ok) {
+        throw json({ message: "Could not find the selected restaurant profile." },
+            { status: 500 });
     }
-    else
-    {
+    else {
         return resp;
     }
 }
