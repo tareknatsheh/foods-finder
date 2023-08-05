@@ -6,7 +6,8 @@ interface IRestaurants {
     name: string,
     description: string,
     address: string,
-    stars?: string
+    stars?: string,
+    image: string
 }
 
 const Restaurants = () => {
@@ -21,7 +22,7 @@ const Restaurants = () => {
                             <Col key={item._id}>
                                 <Link to={item._id} style={{textDecoration: "none"}}>
                                     <Card>
-                                        <Card.Img variant="top" src="../generic-restaurant-pic.jpg" />
+                                        <Card.Img variant="top" src={item.image}  style={{ height: '200px', objectFit: 'cover' }}/>
                                         <Card.Body>
                                             <Card.Title>{item.name}</Card.Title>
                                             <Card.Text>

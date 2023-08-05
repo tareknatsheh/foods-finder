@@ -20,9 +20,6 @@ app.use(express.json());
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../../app/build')));
 
-// app.get("/", (req: Request, res: Response) => {
-//     res.send("Hello");
-// });
 
 app.get("/api", (req, res) => {
     res.json({ message: "Hello hello from server!" });
