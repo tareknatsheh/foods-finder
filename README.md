@@ -1,4 +1,4 @@
-A demo Restaurants-review-app using the following:
+A demo Restaurants-app using the following:
 
 **Backend**
 - Node js with typescript
