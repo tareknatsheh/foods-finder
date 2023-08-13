@@ -8,7 +8,8 @@
     "start": "node api/dist/server.js",
     "dev_api": "nodemon api/src/server.ts",
     "dev_app": "cd app && npm start",
-    "tsc": "cd api && tsc"
+    "tsc": "cd api && tsc",
+    "test": "cd app && npm run test"
   },
   "keywords": [],
   "author": "",

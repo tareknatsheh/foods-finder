@@ -16,7 +16,7 @@ A demo Restaurants-app using the following:
 # Backend #
 
 > [!NOTE]
-> You should have a running Mongodb instance running locally for the backend to have the database functionalities
+> You should have a running Mongodb instance running locally for the backend to have the database functionalities. Configure a .env variable like this: MONGODB_URI=mongodb://127.0.0.1:27017/foods-finder
 
 ## Install API dependancies ##
 `npm install`
@@ -37,3 +37,7 @@ Install dependencies <br>
 ## Run Reactjs app locally ##
 While in the root project folder run <br>
 `npm run dev_app`
+
+## Run tests
+Note: it only runs tests for the Reactjs app, not the Nodejs backend
+`npm run test`

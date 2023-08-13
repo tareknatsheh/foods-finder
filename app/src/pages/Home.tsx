@@ -14,7 +14,6 @@ const Home = () => {
             <p>TODO:</p>
             <ul>
                 <li>Add unit testing for pages: Home, RestaurantProfile and EditRestProfile</li>
-                <li>Replace the placeholder image with unique ones using a url for each restaurant</li>
                 <li>Create users login system and add authentication</li>
                 <li>Allow users to create and delete restaurants</li>
             </ul>
