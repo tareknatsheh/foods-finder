@@ -20,24 +20,31 @@ A demo CRUD Restaurants app using the following:
 > You should have a running Mongodb instance running locally for the backend to have the database functionalities. Configure a .env variable like this: MONGODB_URI=mongodb://127.0.0.1:27017/foods-finder
 
 ## Install API dependancies ##
-`npm install`
+
+    npm install
 
 ## Run the API Nodejs server ##
-`npm run dev_api`
+
+    npm run dev_api
 
 <br>
 
 # Frontend #
 
 ## Install Frontend Reactjs app dependancies ##
-Navigate to app folder <br>
-`cd app` <br>
-Install dependencies <br>
-`npm install`
+Navigate to app folder 
+
+    cd app
+
+<br>
+Install dependencies
+
+    npm install
 
 ## Run Reactjs app locally ##
-While in the root project folder run <br>
-`npm run dev_app`
+While in the root project folder run 
+
+    npm run dev_app
 
 ## Run tests
 Note: it only runs tests for the Reactjs app, not the Nodejs backend <br>
