@@ -1,17 +1,9 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link, json, useLoaderData } from "react-router-dom";
-
-interface IRestaurants {
-    _id: string,
-    name: string,
-    description: string,
-    address: string,
-    stars?: string,
-    image: string
-}
+import { IRestaurant } from "../interfaces";
 
 const Restaurants = () => {
-    const rests = useLoaderData() as IRestaurants[];
+    const rests = useLoaderData() as IRestaurant[];
 
     return (
         <Container className="my-3">

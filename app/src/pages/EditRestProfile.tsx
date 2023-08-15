@@ -1,13 +1,6 @@
 import { Link, json, useRouteLoaderData, redirect, Form } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
-
-interface IRestaurant {
-    name: string,
-    description: string,
-    address: string,
-    stars?: number,
-    _id: string
-}
+import { IRestaurant } from "../interfaces";
 
 const EditRestProfile = () => {
     const restProfile = useRouteLoaderData("restaurant-details") as IRestaurant;
@@ -25,6 +18,10 @@ const EditRestProfile = () => {
             <div className="mb-3 form-group" >
                 <label htmlFor="restAddress1">Address</label>
                 <input type="text" className="form-control" id="restAddress1" placeholder="Enter Address" name="address" defaultValue={restProfile.address} />
+            </div>
+            <div className="mb-3 form-group" >
+                <label htmlFor="restImgLink1">Image URL</label>
+                <input type="text" className="form-control" id="restImgLink1" placeholder="Enter Image link" name="image" defaultValue={restProfile.image} />
             </div>
 
             <Button variant="primary" type="submit">
@@ -51,6 +48,7 @@ export async function action({ request, params }: { request: any, params: any })
         description: data.get("description"),
         address: data.get("address"),
         stars: data.get("stars") || 5,
+        image: data.get("image")
     }
     const resp = await fetch("/api/restaurants/" + params.id, {
         method: "PUT",
@@ -67,7 +65,4 @@ export async function action({ request, params }: { request: any, params: any })
     else {
         return redirect("/restaurants");
     }
-
-
-
 }

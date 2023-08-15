@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const RestaurantsRootLayout = () => {
     return (
-        <Container className="mt-4">
+        <Container>
             <Outlet />
         </Container>
     );

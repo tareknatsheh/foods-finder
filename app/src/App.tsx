@@ -6,6 +6,8 @@ import ErrorPage from './pages/Error';
 import Restaurants, { loader as restaurantsLoader} from './pages/Restaurants';
 import RestaurantsRootLayout from './pages/RestaurantsRootLayout';
 import EditRestProfile, {action as editProfileAction} from './pages/EditRestProfile';
+import About from './pages/About';
+import { AuthenticationGuard } from './components/AuthenticationGuard';
 
 const router = createBrowserRouter([
   {
@@ -26,12 +28,16 @@ const router = createBrowserRouter([
             loader:  restProfileLoader,
             children: [
               {index: true,  element: <RestaurantProfile />},
-              {path: "edit", element: <EditRestProfile />, action: editProfileAction }
+              {
+                path: "edit",
+                element: <AuthenticationGuard component={EditRestProfile} />,
+                action: editProfileAction
+              }
             ]
           }
         ]
       },
-      { path: "about", element: <p>Under construction</p>}
+      { path: "about", element: <About />}
     ]
   }
 ]);

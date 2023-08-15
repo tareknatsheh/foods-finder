@@ -1,4 +1,4 @@
-A demo Restaurants-app using the following:
+A demo CRUD Restaurants app using the following:
 
 **Backend**
 - Node js with typescript
@@ -10,6 +10,7 @@ A demo Restaurants-app using the following:
 - React Router version 6.14.2
 - Jest and React-Testing-Library for the unit tests
 - Bootstrap for the styling
+- Basic user authentication and login using Auth0
 
 <br>
 
@@ -39,5 +40,5 @@ While in the root project folder run <br>
 `npm run dev_app`
 
 ## Run tests
-Note: it only runs tests for the Reactjs app, not the Nodejs backend
+Note: it only runs tests for the Reactjs app, not the Nodejs backend <br>
 `npm run test`
