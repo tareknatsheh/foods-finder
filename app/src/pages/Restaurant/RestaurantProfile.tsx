@@ -1,6 +1,6 @@
 import { Card, Container, ListGroup } from "react-bootstrap";
 import { Link, json, useRouteLoaderData } from "react-router-dom";
-import { IRestaurant } from "../interfaces";
+import { IRestaurant } from "../../interfaces";
 
 const RestaurantProfile = () => {
     const restProfile = useRouteLoaderData("restaurant-details") as IRestaurant;

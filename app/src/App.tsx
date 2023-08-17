@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
-import RestaurantProfile, { loader as restProfileLoader } from './pages/RestaurantProfile';
+import RestaurantProfile, { loader as restProfileLoader } from './pages/Restaurant/RestaurantProfile';
 import RootLayout from './pages/Root';
 import ErrorPage from './pages/Error';
-import Restaurants, { loader as restaurantsLoader} from './pages/Restaurants';
-import RestaurantsRootLayout from './pages/RestaurantsRootLayout';
-import EditRestProfile, {action as editProfileAction} from './pages/EditRestProfile';
+import Restaurants, { loader as restaurantsLoader} from './pages/Restaurant/Restaurants';
+import RestaurantsRootLayout from './pages/Restaurant/RestaurantsRootLayout';
+import EditRestProfile, {action as editProfileAction} from './pages/Restaurant/EditRestProfile';
 import About from './pages/About';
 import { AuthenticationGuard } from './components/AuthenticationGuard';
 

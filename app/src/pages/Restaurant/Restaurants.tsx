@@ -1,6 +1,6 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link, json, useLoaderData } from "react-router-dom";
-import { IRestaurant } from "../interfaces";
+import { IRestaurant } from "../../interfaces";
 
 const Restaurants = () => {
     const rests = useLoaderData() as IRestaurant[];

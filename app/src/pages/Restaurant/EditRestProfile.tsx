@@ -1,6 +1,6 @@
 import { Link, json, useRouteLoaderData, redirect, Form } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
-import { IRestaurant } from "../interfaces";
+import { IRestaurant } from "../../interfaces";
 
 const EditRestProfile = () => {
     const restProfile = useRouteLoaderData("restaurant-details") as IRestaurant;

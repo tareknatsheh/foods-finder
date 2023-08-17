@@ -9,6 +9,7 @@ const Home = () => {
                 <li>React-Bootstrap for styling</li>
                 <li>React Router Dom version 6.14.2 for the routing</li>
                 <li>MongoDB with Mongoose for the database</li>
+                <li>Auth0 for basic login and user authentication</li>
             </ul>
             <br />
             <p>TODO:</p>
