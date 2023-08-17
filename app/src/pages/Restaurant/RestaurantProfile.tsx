@@ -1,9 +1,10 @@
-import { Card, Container, ListGroup } from "react-bootstrap";
-import { Link, json, useRouteLoaderData } from "react-router-dom";
+import { Button, Card, Container, ListGroup } from "react-bootstrap";
+import { Link, json, useRouteLoaderData, useSubmit, redirect } from "react-router-dom";
 import { IRestaurant } from "../../interfaces";
 
 const RestaurantProfile = () => {
     const restProfile = useRouteLoaderData("restaurant-details") as IRestaurant;
+    const submitDelete = useSubmit();
 
     return (
         <Container className="d-flex justify-content-center my-2">
@@ -22,9 +23,11 @@ const RestaurantProfile = () => {
                     <Link to="edit" className="btn btn-outline-dark mx-2">
                         Edit
                     </Link>
-                    <Link to="edit" className="btn btn-outline-danger">
+                    <Button onClick={() => {
+                        submitDelete(null, { method: "DELETE" });
+                    }} >
                         Delete
-                    </Link>
+                    </Button>
                 </div>
 
                 <Card.Footer className="text-muted" >
@@ -46,5 +49,21 @@ export async function loader({ request, params }: { request: any, params: any })
     }
     else {
         return resp;
+    }
+}
+
+export async function action({ request, params }: { request: any, params: any }) {
+    if (request.method === "DELETE") {
+        const resp = await fetch("/api/restaurants/" + params.id, {
+            method: "DELETE"
+        });
+
+        if (!resp.ok) {
+            throw json({ message: `Could not delete restaurant profile: ${params.id}` },
+                { status: 500 });
+        }
+        else {
+            return redirect("/restaurants");
+        }
     }
 }

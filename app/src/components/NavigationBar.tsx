@@ -8,9 +8,9 @@ import LogoutButton from '../pages/LogoutButton';
 
 const NavigationBar = () => {
     const { user, isAuthenticated, isLoading } = useAuth0();
-    console.log("isAuthenticated", isAuthenticated);
-    console.log("user", user);
-    console.log("isLoading", isLoading);
+    // console.log("isAuthenticated", isAuthenticated);
+    // console.log("user", user);
+    // console.log("isLoading", isLoading);
 
 
     return (
@@ -24,17 +24,22 @@ const NavigationBar = () => {
                         <Nav.Link as={Link} to="/restaurants">Restaurants</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
                     </Nav>
+                    {
+                        isAuthenticated ?
+                            <Nav>
+                                <>
+                                    <span className='my-auto me-2'>
+                                        {user?.nickname}
+                                    </span>
+                                    <LogoutButton />
+                                </>
+                            </Nav> :
+                            <Nav>
+                                <LoginButton />
+                            </Nav>
+
+                    }
                 </Navbar.Collapse>
-                {
-                    isAuthenticated ?
-                        <div>
-                            <span className='mx-2'>
-                                {user?.nickname}
-                            </span>
-                            <LogoutButton />
-                        </div> :
-                        <LoginButton />
-                }
             </Container>
         </Navbar>
     );

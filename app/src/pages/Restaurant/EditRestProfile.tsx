@@ -6,7 +6,7 @@ const EditRestProfile = () => {
     const restProfile = useRouteLoaderData("restaurant-details") as IRestaurant;
 
     return (
-        <Form method="PUT">
+        <Form method="PUT" className="my-2">
             <div className="mb-3 form-group" >
                 <label htmlFor="restName1">Restaurant Name</label>
                 <input type="text" className="form-control" id="restName1" placeholder="Enter restaurant name" name="restName" defaultValue={restProfile.name} />
@@ -63,6 +63,6 @@ export async function action({ request, params }: { request: any, params: any })
             { status: 500 });
     }
     else {
-        return redirect("/restaurants");
+        return redirect(`/restaurants/${params.id}`);
     }
 }

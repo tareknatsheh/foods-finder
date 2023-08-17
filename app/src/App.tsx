@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
-import RestaurantProfile, { loader as restProfileLoader } from './pages/Restaurant/RestaurantProfile';
+import RestaurantProfile, { loader as restProfileLoader, action as deleteRestAction } from './pages/Restaurant/RestaurantProfile';
 import RootLayout from './pages/Root';
 import ErrorPage from './pages/Error';
-import Restaurants, { loader as restaurantsLoader} from './pages/Restaurant/Restaurants';
+import Restaurants, { loader as restaurantsLoader, action as resetAction } from './pages/Restaurant/Restaurants';
 import RestaurantsRootLayout from './pages/Restaurant/RestaurantsRootLayout';
-import EditRestProfile, {action as editProfileAction} from './pages/Restaurant/EditRestProfile';
+import EditRestProfile, { action as editProfileAction } from './pages/Restaurant/EditRestProfile';
 import About from './pages/About';
 import { AuthenticationGuard } from './components/AuthenticationGuard';
 
@@ -20,14 +20,14 @@ const router = createBrowserRouter([
         path: "restaurants",
         element: <RestaurantsRootLayout />,
         children: [
-          {index: true, element: <Restaurants />, loader: restaurantsLoader},
+          { index: true, element: <Restaurants />, loader: restaurantsLoader, action: resetAction },
           // If you put / before the path name, it becames an absolute path (here it's relative path)
           {
             path: ":id",
             id: "restaurant-details",
-            loader:  restProfileLoader,
+            loader: restProfileLoader,
             children: [
-              {index: true,  element: <RestaurantProfile />},
+              { index: true, element: <RestaurantProfile />, action: deleteRestAction },
               {
                 path: "edit",
                 element: <AuthenticationGuard component={EditRestProfile} />,
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
           }
         ]
       },
-      { path: "about", element: <About />}
+      { path: "about", element: <About /> }
     ]
   }
 ]);

@@ -20,7 +20,7 @@ app.use(express.json());
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, '../../app/build')));
 
-
+// ------ Routes ------
 app.get("/api", (req, res) => {
     res.json({ message: "Hello hello from server!" });
 });
@@ -90,12 +90,12 @@ app.put("/api/restaurants/:id", async (req, res) => {
     }
 });
 
-// app.post("/api/seed", async (req, res) => {
-//     await Rests.deleteMany({});
-//     if (dummydata.length !== 0) await Rests.insertMany(dummydata);
+app.post("/api/seed", async (req, res) => {
+    await Rests.deleteMany({});
+    if (dummydata.length !== 0) await Rests.insertMany(dummydata);
 
-//     res.send(`done seeding ${dummydata.length}`);
-// });
+    res.send(`done seeding ${dummydata.length}`);
+});
 
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
