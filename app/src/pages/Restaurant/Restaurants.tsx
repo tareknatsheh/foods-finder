@@ -10,7 +10,7 @@ const Restaurants = () => {
         <Container className="my-3">
             <Row className="my-2">
                 <Col>
-                    <Button variant="success" onClick={() => { resetDataSubmit(null, { method: "POST" }) }}>Rest data</Button>
+                    <Button variant="success" onClick={() => { resetDataSubmit(null, { method: "POST" }) }}>Reset data</Button>
                 </Col>
             </Row>
             <Row xs={1} md={4} className="g-4">

@@ -7,7 +7,7 @@ import LoginButton from '../pages/LoginButton';
 import LogoutButton from '../pages/LogoutButton';
 
 const NavigationBar = () => {
-    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { user, isAuthenticated } = useAuth0();
     // console.log("isAuthenticated", isAuthenticated);
     // console.log("user", user);
     // console.log("isLoading", isLoading);

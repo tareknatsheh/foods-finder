@@ -1,10 +1,23 @@
 import { Button, Card, Container, ListGroup } from "react-bootstrap";
 import { Link, json, useRouteLoaderData, useSubmit, redirect } from "react-router-dom";
 import { IRestaurant } from "../../interfaces";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const RestaurantProfile = () => {
     const restProfile = useRouteLoaderData("restaurant-details") as IRestaurant;
     const submitDelete = useSubmit();
+    const { isAuthenticated, loginWithRedirect } = useAuth0();
+
+    const handleDeleteButton = () => {
+        if(isAuthenticated)
+        {
+            submitDelete(null, { method: "DELETE" });
+        }
+        else
+        {
+            loginWithRedirect();
+        }
+    }
 
     return (
         <Container className="d-flex justify-content-center my-2">
@@ -23,9 +36,7 @@ const RestaurantProfile = () => {
                     <Link to="edit" className="btn btn-outline-dark mx-2">
                         Edit
                     </Link>
-                    <Button onClick={() => {
-                        submitDelete(null, { method: "DELETE" });
-                    }} >
+                    <Button onClick={handleDeleteButton} >
                         Delete
                     </Button>
                 </div>

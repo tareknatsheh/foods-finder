@@ -5,8 +5,7 @@ export const AuthenticationGuard = ({ component }: {component: React.ComponentTy
   const Component = withAuthenticationRequired(component, {
     onRedirecting: () => (
       <Container className="d-flex flex-column justify-content-center my-2">
-        <h2>Unautherized!</h2>
-        <p>Please Log In to access this page</p>
+        <div>Redirecting you to the login page...</div>
       </Container>
     ),
   });

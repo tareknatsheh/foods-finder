@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 const LoginButton = () => {
   const { isLoading, loginWithRedirect } = useAuth0();
 
-  return <Button disabled={isLoading} onClick={() => loginWithRedirect()}>
+  return <Button variant="outline-primary" disabled={isLoading} onClick={() => loginWithRedirect()}>
     {
       isLoading ?
         "loading..." :
