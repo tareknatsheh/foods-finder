@@ -2,7 +2,9 @@ FROM node:14.16.0-alpine3.13
 
 RUN addgroup app && adduser -S -G app app
 
+# Main project folder:
 WORKDIR /project
+
 # The backend part
 COPY package*.json ./
 RUN npm install
@@ -16,7 +18,7 @@ RUN npm install
 RUN npm run build
 
 WORKDIR /project
-EXPOSE 5001
+EXPOSE 5000
 
 USER app
 
