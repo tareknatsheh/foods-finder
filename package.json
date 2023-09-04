@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd api && tsc && cd ../app && npm install && npm run build",
-    "start": "node api/dist/server.js",
+    "build": "tsc",
+    "start": "node dist/server.js",
     "dev_api": "nodemon api/src/server.ts",
     "dev_app": "cd app && npm start",
     "tsc": "cd api && tsc",
