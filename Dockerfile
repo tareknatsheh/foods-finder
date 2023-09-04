@@ -22,4 +22,4 @@ EXPOSE 5000
 
 USER app
 
-CMD ["npm", "run", "docker_start"]
+CMD ["npm", "start"]

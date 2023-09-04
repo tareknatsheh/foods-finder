@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd api && tsc",
-    "docker_build": "cd api && tsc",
+    "build": "cd api && tsc && cd ../app && npm install && npm run build",
     "start": "node api/dist/server.js",
-    "docker_start": "node api/dist/server.js",
+    "docker_build": "cd api && tsc",
     "dev_api": "nodemon api/src/server.ts",
     "dev_app": "cd app && npm start",
     "tsc": "cd api && tsc",
