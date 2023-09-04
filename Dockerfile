@@ -12,6 +12,7 @@ RUN npm run build
 # The frontend React.js part:
 COPY /app ./app
 WORKDIR /project/app
+RUN npm install
 RUN npm run build
 
 WORKDIR /project

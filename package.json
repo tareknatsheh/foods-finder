@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "cd api && tsc",
     "start": "node api/dist/server.js",
     "dev_api": "nodemon api/src/server.ts",
     "dev_app": "cd app && npm start",
