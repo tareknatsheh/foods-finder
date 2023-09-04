@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  fullstack:
+    build: ./
+    ports:
+      - 3000:5000
+    depends_on:
+      - db
+    environment:
+      - MONGODB_URI=mongodb://db/vidly
+  
+  db:
+    image: mongo:4.0-xenial
+    ports:
+      - 27017:27017
+    volumes:
+      - vidly:/data/db
+
+volumes:
+  vidly:
