@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "cd api && tsc",
+    "docker_build": "cd api && tsc",
     "start": "node api/dist/server.js",
+    "docker_start": "node api/dist/server.js",
     "dev_api": "nodemon api/src/server.ts",
     "dev_app": "cd app && npm start",
     "tsc": "cd api && tsc",

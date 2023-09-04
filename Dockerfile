@@ -9,7 +9,7 @@ WORKDIR /project
 COPY package*.json ./
 RUN npm install
 COPY /api ./api
-RUN npm run build
+RUN npm run docker_build
 
 # The frontend React.js part:
 COPY /app ./app
@@ -22,4 +22,4 @@ EXPOSE 5000
 
 USER app
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "docker_start"]
