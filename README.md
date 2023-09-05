@@ -14,6 +14,13 @@ A demo CRUD Restaurants app using the following:
 
 <br>
 
+# Quick start #
+Using Docker:
+
+    docker-compose up
+
+If you don't want to use docker, then follow the steps:
+
 # Backend #
 
 > [!NOTE]
