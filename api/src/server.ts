@@ -5,11 +5,15 @@ import path from "path";
 import mongoose from "mongoose";
 import Rests from "./models/restaurant";
 import dummydata from "./seeds/dummydata";
+import sslRedirect from 'heroku-ssl-redirect';
 
 dotenv.config();
 
 const app: Application = express();
 // 'mongodb://127.0.0.1:27017/foods-finder'
+
+// enable ssl redirect
+app.use(sslRedirect());
 
 mongoose.connect(process.env["MONGODB_URI"])
     .then(() => console.log("MongoDB db connected!"))
