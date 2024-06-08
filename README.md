@@ -1,5 +1,5 @@
 ### Demo
-Checkout a working demo [here](https://foody-finder-ba21ac39bc09.herokuapp.com/)
+Check out a working demo [here](https://foody-finder-ba21ac39bc09.herokuapp.com/)
 
 -----
 This CRUD Restaurants app using the following:
