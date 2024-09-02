@@ -1,7 +1,6 @@
-const express = require('express');
+import express from "express";
 const router = express.Router();
-const restaurantsController = require("../controllers/restaurants");
-
+import * as restaurantsController from "../controllers/restaurants";
 
 // Get all the restaurants in the database:
 router.get("/", restaurantsController.handleGetAllRestaurants);
@@ -14,8 +13,4 @@ router.delete("/:id", restaurantsController.handleDeleteRestaurantById);
 // Edit a restaurant by ID:
 router.put("/:id", restaurantsController.handleEditRestaurantById);
 
-
-
-// router.post("/", contactsController.handleAddNewContact);
-
-module.exports = router;
+export default router;

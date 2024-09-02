@@ -1,7 +1,7 @@
 import Rests from "../models/restaurant";
 import { Request, Response } from "express";
 
-module.exports.handleGetAllRestaurants = async (req: Request, res: Response) => {
+export const handleGetAllRestaurants = async (req: Request, res: Response) => {
     try {
         const allRests = await Rests.find({});
         res.json(allRests);
@@ -12,7 +12,7 @@ module.exports.handleGetAllRestaurants = async (req: Request, res: Response) => 
     }
 }
 
-module.exports.handleAddNewRestaurant = async (req: Request, res: Response) => {
+export const handleAddNewRestaurant = async (req: Request, res: Response) => {
     try {
         const newRest = new Rests(req.body);
         const saveResp = await newRest.save();
@@ -26,7 +26,7 @@ module.exports.handleAddNewRestaurant = async (req: Request, res: Response) => {
     }
 }
 
-module.exports.handleGetRestaurantById = async (req: Request, res: Response) => {
+export const handleGetRestaurantById = async (req: Request, res: Response) => {
     try {
         const requestedRest = await Rests.findById(req.params.id);
         res.json(requestedRest);
@@ -37,7 +37,7 @@ module.exports.handleGetRestaurantById = async (req: Request, res: Response) => 
     }
 }
 
-module.exports.handleDeleteRestaurantById = async (req: Request, res: Response) => {
+export const handleDeleteRestaurantById = async (req: Request, res: Response) => {
     try {
         const deleteResp = await Rests.findByIdAndDelete(req.params.id);
         console.log(deleteResp);
@@ -49,7 +49,7 @@ module.exports.handleDeleteRestaurantById = async (req: Request, res: Response) 
     }
 }
 
-module.exports.handleEditRestaurantById = async (req: Request, res: Response) => {
+export const handleEditRestaurantById = async (req: Request, res: Response) => {
     try {
         const editResp = await Rests.findByIdAndUpdate(req.params.id, { ...req.body })
         console.log(editResp);
